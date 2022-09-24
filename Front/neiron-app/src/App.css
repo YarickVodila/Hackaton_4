@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+.drop-area {
+  width: 80vw;
+  height: 80vh;
+  border: 5px dashed black;
+  display: grid;
+  align-items:center;
+  justify-content: center;
+
+
+}

@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
+import BarChart from "./Components/BarChart";
+import {useState} from "react";
+import OutputLabel from "./UI/Output/OutputLabel";
+import InputBut from "./UI/Input/InputBut";
+import MyButton from "./UI/MyButton/MyButton";
+import MyModal from "./UI/MyModal/MyModal";
+
+
+
+
+
+
 
 function App() {
+    const [label,SetLabel] = useState('Popa');
+    const [drag,setDrag] = useState(false);
+    const [modal, setModal] = useState(false);
+    function closeModal() {
+        setModal(false)
+    }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+        <div className="App">
+            <MyModal visible={modal} setVisible={setModal}>
+                <InputBut drag={drag} setDrag={setDrag} funct={closeModal}>
+                </InputBut>
+            </MyModal>
+            <header>
+                <MyButton onClick={() => setModal(true)}>Загрузка датасета</MyButton>
+            </header>
+        </div>
   );
 }
 
