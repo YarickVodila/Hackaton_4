@@ -1,7 +1,7 @@
 
 import './App.css';
 import BarChart from "./Components/BarChart";
-import {useState} from "react";
+import React, {useState} from "react";
 import OutputLabel from "./UI/Output/OutputLabel";
 import InputBut from "./UI/Input/InputBut";
 import MyButton from "./UI/MyButton/MyButton";
