@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './InputBut.module.css'
+import axios from "axios";
 const InputBut = ({drag,setDrag,funct}) => {
     function dragStartHandler(e){
         e.preventDefault()
@@ -16,8 +17,20 @@ const InputBut = ({drag,setDrag,funct}) => {
         funct()
         let files = [...e.dataTransfer.files]
 
+        const formData = new FormData()
+        formData.append('file', files[0])
+        console.log(formData)
+        axios.post('http://127.0.0.1:8000/files/', formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            }
+        })
+            .then(function (response) {
+                console.log(response.data);
+            });
 
 
+        setDrag(false)
     }
 
     return (
