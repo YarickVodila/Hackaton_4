@@ -31,7 +31,7 @@ start_time = time.time()
 
 chunksize = 10000 #батч
 Id_corr = []
-file_name = 'DS_train(2020-06--2022-06-01).csv'
+file_name = 'DS_train(2020-06--2022-06-21).csv'
 array = np.array([]) # Массив для
 cor_array = np.array([]) #Массив CPI
 
