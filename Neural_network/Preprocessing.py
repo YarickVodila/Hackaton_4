@@ -199,7 +199,7 @@ for chunk in pd.read_csv(file_name, sep='\t', chunksize=chunksize):
     #print(id)
     #print(cor_array.shape[0])
 
-    if id >= 150000:
+    if id >= 15000:
         break
 '''
     if cor_array.shape[0] == 48:
@@ -208,7 +208,7 @@ for chunk in pd.read_csv(file_name, sep='\t', chunksize=chunksize):
 '''
 
 name_file_save = 'test_1.txt'
-f = open('name_file_save', 'w+')
+f = open(name_file_save, 'w+')
 f.write(str(mean_cpi/count))
 f.close()
 
